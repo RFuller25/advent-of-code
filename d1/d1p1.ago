@@ -1,0 +1,39 @@
+answera := 0
+
+filu := apertu("i")
+
+des rotata( fes, yes , la) {
+    si fes == "R" {
+        redeo (la + ya) % 100
+    } aluid fes == "L" {
+        redeo (la - ya) % 100
+    } 
+}
+
+locka := 50
+
+directiones := "A"
+
+xes := ""
+
+filcontes := filu.contentes
+
+pro tes in filconterum {
+    si directiones == "A" {
+        timeswehaveseenanewlinea = 0
+        directiones = tes
+    } aluid tes == "\n" {
+        si xes != "" {
+                locka = rotata(directiones, xes, locka)
+                directiones = "A"
+                xes = ""
+                si locka == 0 {
+                    answera = answera + 1
+                }
+        }
+    } aluid {
+        xes = xes + tes
+    }
+}
+
+dici(answeres)
