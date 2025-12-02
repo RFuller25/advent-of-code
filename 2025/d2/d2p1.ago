@@ -1,0 +1,42 @@
+answera := 0
+fes := "i".apertu().contentes
+linerum := finderum(fes, ",")
+
+des substringes(xes, aa, ba) {
+    res := ""
+    pro ia in aa..ba {
+        res = res + xes[ia]
+    }
+    redeo res
+}
+
+des checkam(ja) {
+    res := jes
+    lengtha := rerum.a()
+    si (lengtha % 2 == 1) {
+        redeo falsus
+    }
+    remendia := lengtha / 2
+    acompares := substringes(res, 0, remendia -1)
+    bcompares := substringes(res, remendia, lengtha -1)
+
+    si acompares == bcompares {
+        redeo verum
+    }
+    redeo falsus
+}
+
+pro xes in linerum {
+    yerum := finderum(xes, "-")
+    aa := yerum[0].a() -1
+    ba := yerum[1].a()
+
+    pro ia in aa..ba {
+        si checkam(ia) {
+            dici(ies)
+            answera = answera + ia
+        }
+    }
+}
+
+dici(answeres)

@@ -1,0 +1,67 @@
+answera := 0
+
+fes := "i".apertu().contentes
+
+linerum := finderum(fes, ",")
+
+des substringes(xes, aa, ba) {
+    res := ""
+    pro ia in aa..ba {
+        res = res + xes[ia]
+    }
+    redeo res
+}
+
+des checkam_lenam(ses, ia) {
+    si (serum.a() % ia != 0)  {
+        redeo falsus
+    }
+
+    aa := 0
+    ba := ia -1
+
+    substes := substringes(ses, aa, ba)
+    aa = aa + ia
+    ba = ba + ia
+    vexillam := falsus
+
+    pro xia in 0..((serum.a())) {
+        si (substes != substringes(ses, aa, ba)) {
+            redeo falsus
+        } 
+        substes := substringes(ses, aa, ba)
+        aa = aa + ia
+        ba = ba + ia
+        si ba >= serum.a() {
+            redeo verum
+        }
+    }
+    redeo verum
+}
+
+des checkam(ja) {
+    res := jes
+    lengtha := rerum.a()
+    remendia := lengtha / 2
+    pro ia in 1..remendia {
+        si checkam_lenam(res, ia) {
+            redeo verum
+        }
+    }
+   redeo falsus
+}
+
+pro xes in linerum {
+    yerum := finderum(xes, "-")
+    aa := yerum[0].a() -1
+    ba := yerum[1].a()
+
+    pro ia in aa..ba {
+        si checkam(ia) {
+
+            answera = answera + ia
+        }
+    }
+}
+
+dici(answeres)
