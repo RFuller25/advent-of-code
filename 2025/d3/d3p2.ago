@@ -19,7 +19,7 @@ des get_batteraem(ses, numera_pa_ignora, countera) {
 pro xes in listerum {
     battres := ""
     countera := 0
-    pro ja in [I, 0] {
+    pro ja in [XI, X, IX, VIII, VII, VI, V, IV, III, II, I, 0] {
         baem := get_batteraem(xes, (xerum.a() - ja - I), countera)
         countera = baem[1] + 1
         battres = battres + [baem[0]].es()
