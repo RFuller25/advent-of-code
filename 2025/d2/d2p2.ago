@@ -18,7 +18,7 @@ des checkam_lenam(ses, ia) {
     }
 
     aa := 0
-    ba := ia -1
+    ba := ia - I
 
     substes := substringes(ses, aa, ba)
     aa = aa + ia
@@ -42,8 +42,8 @@ des checkam_lenam(ses, ia) {
 des checkam(ja) {
     res := jes
     lengtha := rerum.a()
-    remendia := lengtha / 2
-    pro ia in 1..remendia {
+    remendia := lengtha / II
+    pro ia in I..remendia {
         si checkam_lenam(res, ia) {
             redeo verum
         }
@@ -53,8 +53,8 @@ des checkam(ja) {
 
 pro xes in linerum {
     yerum := finderum(xes, "-")
-    aa := yerum[0].a() -1
-    ba := yerum[1].a()
+    aa := yerum[0].a() - I
+    ba := yerum[I].a()
 
     pro ia in aa..ba {
         si checkam(ia) {

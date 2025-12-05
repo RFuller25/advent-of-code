@@ -13,12 +13,12 @@ des substringes(xes, aa, ba) {
 des checkam(ja) {
     res := jes
     lengtha := rerum.a()
-    si (lengtha % 2 == 1) {
+    si (lengtha % II == 1) {
         redeo falsus
     }
-    remendia := lengtha / 2
-    acompares := substringes(res, 0, remendia -1)
-    bcompares := substringes(res, remendia, lengtha -1)
+    remendia := lengtha / II
+    acompares := substringes(res, 0, remendia - I)
+    bcompares := substringes(res, remendia, lengtha - I)
 
     si acompares == bcompares {
         redeo verum
@@ -28,7 +28,7 @@ des checkam(ja) {
 
 pro xes in linerum {
     yerum := finderum(xes, "-")
-    aa := yerum[0].a() -1
+    aa := yerum[0].a() - I
     ba := yerum[1].a()
 
     pro ia in aa..ba {

@@ -3,8 +3,8 @@ fes := "i".apertu().contentes
 listerum := finderum(fes, "\n")
 
 des get_batteraem(ses, numera_pa_ignora, countera) {
-    battera := -1
-    retcountera := -1
+    battera := -I
+    retcountera := -I
     pro ia in countera..numera_pa_ignora {
         si ses[ia] == "\n" vel ses[ia] == "" {
             # pass   
@@ -21,7 +21,7 @@ pro xes in listerum {
     countera := 0
     pro ja in [I, 0] {
         baem := get_batteraem(xes, (xerum.a() - ja - I), countera)
-        countera = baem[1] + 1
+        countera = baem[1] + I
         battres = battres + [baem[0]].es()
     }
     answera = answera + battra

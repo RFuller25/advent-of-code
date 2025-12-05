@@ -16,13 +16,13 @@ des coordinara(luum, xa, ya, maximusxa, maximusya) {
     } aluid luum[xa][ya] == "." vel luum[xa][ya] == "\n"{
         redeo 0
     } aluid luum[xa][ya] == "@" {
-        redeo 1
+        redeo I
     }
 }
 
 
 des coordinara_completa(luum, xa, ya, maximusxa, maximusya) {
-    redeo sumium([coordinara(luum, xa - 1, ya -1, maximusxa, maximusya), coordinara(luum, xa - 1, ya, maximusxa, maximusya), coordinara(luum, xa - 1, ya + 1, maximusxa, maximusya), coordinara(luum, xa, ya - 1, maximusxa, maximusya), coordinara(luum, xa, ya + 1, maximusxa, maximusya), coordinara(luum, xa + 1, ya - 1, maximusxa, maximusya), coordinara(luum, xa + 1, ya, maximusxa, maximusya), coordinara(luum, xa + 1, ya + 1, maximusxa, maximusya)])
+    redeo sumium([coordinara(luum, xa - I, ya -I, maximusxa, maximusya), coordinara(luum, xa - I, ya, maximusxa, maximusya), coordinara(luum, xa - I, ya + I, maximusxa, maximusya), coordinara(luum, xa, ya - I, maximusxa, maximusya), coordinara(luum, xa, ya + I, maximusxa, maximusya), coordinara(luum, xa + I, ya - I, maximusxa, maximusya), coordinara(luum, xa + I, ya, maximusxa, maximusya), coordinara(luum, xa + I, ya + I, maximusxa, maximusya)])
 }
 
 maximusxa := magnus_la
@@ -30,8 +30,8 @@ maximusya := magnus_luum[0].a()
 
 pro ia in 0..maximusxa {
     pro ja in 0..maximusya {
-        si coordinara_completa(magnus_luum, ia, ja, maximusxa, maximusya) < 4 et coordinara(magnus_luum, ia, ja, maximusxa, maximusya) == 1 {
-            answera = answera + 1
+        si coordinara_completa(magnus_luum, ia, ja, maximusxa, maximusya) < 4 et coordinara(magnus_luum, ia, ja, maximusxa, maximusya) == I {
+            answera = answera + I
         }
     }
 }

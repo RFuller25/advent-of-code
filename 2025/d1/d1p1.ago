@@ -4,13 +4,13 @@ filu := apertu("i")
 
 des rotata( fes, yes , la) {
     si fes == "R" {
-        redeo (la + ya) % 100
+        redeo (la + ya) % C
     } aluid fes == "L" {
-        redeo (la - ya) % 100
+        redeo (la - ya) % C
     } 
 }
 
-locka := 50
+locka := L
 
 directiones := "A"
 
@@ -28,7 +28,7 @@ pro tes in filconterum {
                 directiones = "A"
                 xes = ""
                 si locka == 0 {
-                    answera = answera + 1
+                    answera = answera + I
                 }
         }
     } aluid {

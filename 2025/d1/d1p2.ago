@@ -4,15 +4,15 @@ filu := apertu("i")
 
 des rotata( fes, yes , la) {
     si fes == "R" {
-        redeo (la + ya) % 100
+        redeo (la + ya) % C
     } aluid fes == "L" {
-        redeo (la - ya) % 100
+        redeo (la - ya) % C
     } aluid {
-        redeo -1
+        redeo - I
     }
 }
 
-locka := 50
+locka := L
 directiones := "A"
 xes := ""
 filcontes := filu.contentes
@@ -22,10 +22,10 @@ pro tes in filconterum {
         directiones = tes
     } aluid tes == "\n" {
         si xes != "" {
-            pro erma in 1..xa {
-                locka = rotata(directiones, 1, locka)
+            pro erma in I..xa {
+                locka = rotata(directiones, I, locka)
                 si locka == 0 {
-                    answera = answera + 1
+                    answera = answera + I
                 }
             }
         xes = ""
