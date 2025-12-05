@@ -1,0 +1,54 @@
+answera := 0
+fes := "i".apertu().contentes
+
+listerum := finderum(fes, "\n")
+
+pro xes in listerum {
+    batteraa := -1
+    batteraca := -1
+
+    batterba := -1
+
+    countera := 0
+    cherum := xerum
+    lengtha := cha
+
+
+    tempanserum := []
+
+    # pass 1
+
+    pro bes in xerum {
+        countera = countera + 1
+        si bes == "\n" vel bes == "" vel countera >= (lengtha - X){
+         # pass   
+        } aluid ba > batteraa {
+            batteraa = ba
+            batteraca = countera
+        } 
+    }
+    tempanserum = tempanserum.appenduum(batteraes)
+
+    # pass 2
+
+    countera = 0
+    pro bes in xerum {
+        countera = countera + 1
+        si bes == "\n" vel bes == ""  vel countera <= batteraca vel countera >= (lengtha - IX){
+         # pass   
+        } aluid ba > batterba {
+            batterba = ba
+            batteraca = countera
+        } 
+    }
+
+    tempanserum = tempanserum.appenduum(batterbes)
+
+    tempes := tempanserum.iunges("")
+    tempes.dici()
+    answera = answera + tempa
+
+}
+
+dici("\n")
+dici(answeres)

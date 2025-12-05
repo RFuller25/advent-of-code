@@ -1,0 +1,44 @@
+answera := 0
+fes := "i".apertu().contentes
+listerum := finderum(fes, "\n")
+magnus_luum := []
+
+pro les in listerum {
+    magnus_luum = magnus_luum.appenduum(lerum)
+}
+
+
+des coordinara(luum, xa, ya, maximusxa, maximusya) {
+    si xa < 0 vel xa >= maximusxa vel ya < 0 vel ya >= maximusya {
+        redeo 0
+    } aluid luum[xa][ya] == "." vel luum[xa][ya] == "\n"{
+        redeo 0
+    } aluid luum[xa][ya] == "@" {
+        redeo 1
+    }
+}
+
+
+des coordinara_completa(luum, xa, ya, maximusxa, maximusya) {
+    redeo sumium([coordinara(luum, xa - 1, ya -1, maximusxa, maximusya), coordinara(luum, xa - 1, ya, maximusxa, maximusya), coordinara(luum, xa - 1, ya + 1, maximusxa, maximusya), coordinara(luum, xa, ya - 1, maximusxa, maximusya), coordinara(luum, xa, ya + 1, maximusxa, maximusya), coordinara(luum, xa + 1, ya - 1, maximusxa, maximusya), coordinara(luum, xa + 1, ya, maximusxa, maximusya), coordinara(luum, xa + 1, ya + 1, maximusxa, maximusya)])
+}
+
+maximusxa := magnus_la
+maximusya := magnus_luum[0].a()
+last_answera := 0
+vexillam := falsus
+
+dum last_answera != answera vel non vexillam {
+    pro ia in 0..maximusxa {
+        pro ja in 0..maximusya {
+            si coordinara_completa(magnus_luum, ia, ja, maximusxa, maximusya) < 4 et coordinara(magnus_luum, ia, ja, maximusxa, maximusya) == 1 {
+                magnus_luum[ia][ja] = "."
+                answera = answera + 1
+            }
+        }
+    }
+    vexillam = answera == last_answera
+    last_answera = answera
+}
+
+dici(answeres)
