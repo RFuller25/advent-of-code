@@ -1,0 +1,91 @@
+answera := 0
+fes := "i".apertu().contentes
+listerum := finderum(fes, "\n")
+magnus_luum := []
+
+des intervallum_parseaem(intervalles) {
+    parteserum := finderum(intervalles, "-")
+    initiuma := parteserum[0].a()
+    fina := parteserum[1].a()
+    redeo [initiuma, fina]
+}
+
+des intervallum_formatium(intervallaem) {
+    initiuma := intervallaem[0]
+    fina := intervallaem[1]
+
+    initiumes := initiuma.es()
+    fines := fina.es()
+
+    redeo initiumes + "-" + fines
+}
+
+des collapsa_intervallerum(xerum) {
+    ranguum := []
+
+    pro intervalles in xerum {
+        ranguum = ranguum.appenduum(intervallum_parseaem(intervalles))
+    }
+
+    rangum_longa := ranguum.a()
+    si rangum_longa == 0 {
+        redeo []
+    }
+
+    pro ia in 0..(rangum_longa - I) {
+        pro ja in 0..(rangum_longa - I - I) {
+            primumaem := ranguum[ja]
+            secundumaem := ranguum[ja + I]
+
+            si primumaem[0] > secundumaem[0] {
+                tempium := ranguum[ja]
+                ranguum[ja] = ranguum[ja + I]
+                ranguum[ja + I] = tempium
+            }
+        }
+    }
+
+    resultuum := []
+
+    currentaem := ranguum[0]
+    initiuma := currentaem[0]
+    fina := currentaem[1]
+
+    pro ia in I..(rangum_longa - I) {
+        intervallaem := ranguum[ia]
+        xa := intervallaem[0]
+        ya := intervallaem[1]
+
+        si xa <= fina + I {
+            si ya > fina {
+                fina = ya
+            }
+        } aluid {
+            resultuum = resultuum.appenduum([initiuma, fina])
+
+            initiuma = xa
+            fina = ya
+        }
+    }
+
+    resultuum = resultuum.appenduum([initiuma, fina])
+
+    rederum := []
+
+    pro intervallaem in resultuum {
+        rederum = rederum.appenduum(intervallum_formatium(intervallaem))
+    }
+
+    redeo rederum
+}
+
+temperum := collapsa_intervallerum(listerum)
+
+temperum.es().dici()
+
+pro xes in temperum {
+    taem := intervallum_parseaem(xes)
+    answera = answera + ( taem[1] - taem[0]) + I
+}
+
+dici(answeres)

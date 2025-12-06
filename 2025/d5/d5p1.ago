@@ -1,0 +1,35 @@
+answera := 0
+fes := "i".apertu().contentes
+listerum := finderum(fes, "\n")
+magnus_luum := []
+duomnus_laem := []
+
+des containam(ses, hes) {
+    pro xes in serum {
+        si xes == hes {
+            redeo verum
+        }
+    }
+    redeo falsus
+}
+
+pro xes in listerum {
+    si containam(xes, "-") {
+        rangerum := finderum(xes, "-")
+        magnus_luum = magnus_luum.appenduum([rangerum[0].a(), rangerum[1].a()])
+    } aluid {
+        duomnus_laem = duomnus_laem.appenduum(xes.a())
+    }
+}
+
+pro ia in duomnus_laem {
+    pro juum in magnus_luum {
+        si juum[0] <= ia et ia <= juum[1] {
+            dici(ies)
+            answera = answera + 1
+            frio
+        }
+    }
+}
+
+dici(answeres)

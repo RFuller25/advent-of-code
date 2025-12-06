@@ -1,0 +1,49 @@
+answera := 0
+fes := "i".apertu().contentes
+
+terum := fes.finderum("\n")
+
+nums_unerum := terum[0].finderum(" ")
+nums_duerum := terum[I].finderum(" ")
+nums_treserum := terum[II].finderum(" ")
+nums_quaterum := terum[III].finderum(" ")
+signserum := terum[IV].finderum(" ")
+
+
+
+des confunda(signes, nums_unes, nums_dueres, nums_treses, nums_quateres) {
+    terum := [nums_unes.a().es(), nums_dueres.a().es(), nums_treses.a().es(), nums_quateres.a().es()]
+    maem := [nums_unes.erum().a(), nums_dueres.erum().a(), nums_treses.erum().a(), nums_quateres.erum().a()]
+    maxa := maxium(maem) - 1
+    summmerum := []
+
+    maem = vicissuum((0..maxa).aem())
+    pro ia in maem {
+        tmes := ""
+        pro ja in 0..III {
+            si ia < terum[ja].erum().a() {
+                tmes = tmes + terum[ja][ia]
+            }
+        }
+        summmerum = summmerum.appenduum(tmes)
+    }
+    tempera := signes == "*" ? 1 : 0
+    pro ses in summmerum {
+        si signes == "*" {
+            tempera = tempera * ses.a()
+        } aluid {
+            tempera = tempera + ses.a()
+        }
+    }
+    (summmerum.iunges(signes) + " = " + temperes).dici()
+
+    redeo tempera
+}
+
+
+pro ia in 0..(signserum.a() - I) {
+    signes := signserum[ia]
+        answera = answera + confunda(signes,nums_unerum[ia],nums_duerum[ia],nums_treserum[ia],nums_quaterum[ia])
+}
+
+answeres.dici()

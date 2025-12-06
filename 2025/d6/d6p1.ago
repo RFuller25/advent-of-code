@@ -1,0 +1,21 @@
+answera := 0
+fes := "i".apertu().contentes
+
+terum := fes.finderum("\n")
+
+nums_unerum := terum[0].finderum(" ")
+nums_duerum := terum[I].finderum(" ")
+nums_treserum := terum[II].finderum(" ")
+nums_quaterum := terum[III].finderum(" ")
+signserum := terum[IV].finderum(" ")
+
+pro ia in 0..(signserum.a() - I) {
+    signes := signserum[ia]
+    si signes == "+" {
+        answera = answera + (nums_unerum[ia].a() + nums_duerum[ia].a() + nums_treserum[ia].a() + nums_quaterum[ia].a())
+    } aluid {
+        answera = answera + (nums_unerum[ia].a() * nums_duerum[ia].a() * nums_treserum[ia].a() * nums_quaterum[ia].a())
+    }
+}
+
+answeres.dici()
