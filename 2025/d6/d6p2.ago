@@ -3,47 +3,62 @@ fes := "i".apertu().contentes
 
 terum := fes.finderum("\n")
 
-nums_unerum := terum[0].finderum(" ")
-nums_duerum := terum[I].finderum(" ")
-nums_treserum := terum[II].finderum(" ")
-nums_quaterum := terum[III].finderum(" ")
-signserum := terum[IV].finderum(" ")
+num_of_lina := ta
 
+lengtha := terum[0].erum().a()
+maem := vicissuum((0..(lengtha - I)).aem())
 
+cachaem := []
+signes := ""
 
-des confunda(signes, nums_unes, nums_dueres, nums_treses, nums_quateres) {
-    terum := [nums_unes.a().es(), nums_dueres.a().es(), nums_treses.a().es(), nums_quateres.a().es()]
-    maem := [nums_unes.erum().a(), nums_dueres.erum().a(), nums_treses.erum().a(), nums_quateres.erum().a()]
-    maxa := maxium(maem) - 1
-    summmerum := []
-
-    maem = vicissuum((0..maxa).aem())
-    pro ia in maem {
-        tmes := ""
-        pro ja in 0..III {
-            si ia < terum[ja].erum().a() {
-                tmes = tmes + terum[ja][ia]
+pro ia in maem {
+    numes := ""
+    pro ja in 0..(num_of_lina - I) {
+        si ja == 0 et terum[ja][ia] == " " et terum[I][ia] == " "  et terum[II][ia] == " " et terum[III][ia] == " " et terum[IV][ia] == " "{
+            dici(cachaem.es().finderum("\n").iunges(signes))
+            resulta := 0
+            si signes == "+" {
+                resulta = sumium(cachaem)
+            } aluid signes == "*" {
+                tempa := I
+                pro ha in cachaem {
+                    tempa = tempa * ha
+                }
+                resulta = tempa
+            } aluid {
+                "panic".dici()
+                signes.dici()
             }
-        }
-        summmerum = summmerum.appenduum(tmes)
-    }
-    tempera := signes == "*" ? 1 : 0
-    pro ses in summmerum {
-        si signes == "*" {
-            tempera = tempera * ses.a()
+            dici(resultes)
+            answera = answera + resulta
+            cachaem = []
+            frio
+        } aluid ja == (num_of_lina - I) {
+            cachaem = cachaem.appenduum(spoliares(numes).a())
+            signes = terum[ja][ia]
+            numes = ""
         } aluid {
-            tempera = tempera + ses.a()
+            numes = numes + terum[ja][ia].es()
         }
     }
-    (summmerum.iunges(signes) + " = " + temperes).dici()
-
-    redeo tempera
 }
 
-
-pro ia in 0..(signserum.a() - I) {
-    signes := signserum[ia]
-        answera = answera + confunda(signes,nums_unerum[ia],nums_duerum[ia],nums_treserum[ia],nums_quaterum[ia])
+dici(cachaem.es().finderum("\n").iunges(signes))
+resulta := 0
+si signes == "+" {
+    resulta = sumium(cachaem)
+} aluid signes == "*" {
+    tempa := I
+    pro ha in cachaem {
+        tempa = tempa * ha
+    }
+    resulta = tempa
+} aluid {
+    "panic".dici()
+    signes.dici()
 }
+dici(resultes)
+answera = answera + resulta
+
 
 answeres.dici()
