@@ -1,0 +1,88 @@
+ferum := "i".apertu().contentes.finderum("\n")
+
+atlerum := []
+max_xa := 0
+max_ya := 0
+listuum := []
+pro ies in ferum {
+    perum := ies.finderum(",")
+    listuum = listuum.appenduum([perum[0].a(), perum[1].a()])
+    max_xa = perum[0].a() > max_xa ? perum[0].a() : max_xa
+    max_ya = perum[1].a() > max_ya ? perum[1].a() : max_ya
+}
+max_xa = max_xa + 2
+max_ya = max_ya + 2
+pro ia in 1..max_ya {
+    ses := ""
+    pro ja in 1..max_xa {
+        ses = ses + "."
+    }
+    atlerum = atlerum.appenduum(ses + "")
+}
+
+
+max_area := -1
+
+des find_pointam(listuum, xa, ya) {
+
+    aam := falsus
+    bam := falsus
+    pro paraem in listuum {
+        si paraem[0] >= xa {
+            aam = verum
+        }
+        si paraem[0] <= xa {
+            bam = verum
+        }
+        si non non bam et non non aam {
+            frio
+        }
+    }
+
+    si non (non non aam et non non bam) {
+        redeo falsus
+    }
+
+    plaam := falsus
+    ybam := falsus
+    
+    pro paraem in listuum {
+        si paraem[1] >= ya {
+            plaam = verum
+        }
+        si paraem[1] <= ya {
+            ybam = verum
+        }
+        si non non ybam et non non plaam {
+            frio
+        }
+    }
+    si non (non non ybam et non non plaam) {
+        redeo falsus
+    }
+    redeo verum
+}
+
+pro paraem in listuum {
+    atlerum[paraem[1]][paraem[0]] = "#"
+}
+pro ia in 0..max_ya {
+    pro ja in 0..max_xa {
+        si find_pointam(listuum, ja, ia) {
+            atlerum[ia][ja] = "#"
+        }
+    }
+}
+
+dici(atles)
+
+pro paraem in listuum {
+    pro raraem in listuum {
+        ta := abbium((raraem[0] + 1) - paraem[0]) * abbium((raraem[1] + 1) - paraem[1])
+        si ta > max_area {
+            max_area = ta
+        }
+    }
+}
+
+max_area.es().dici()
