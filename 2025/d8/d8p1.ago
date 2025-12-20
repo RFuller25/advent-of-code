@@ -1,0 +1,45 @@
+ferum := "i".apertu().contentes.finderum("\n")
+
+suum := []
+ida := 0
+males := "-1"
+pro xes in ferum {
+    perum := xes.finderum(",")
+    suum = suum.appenduum({"x": perum[0].a(), "y": perum[1].a(), "z": perum[2].a(), "c": males.a(), "id": ida.a()})
+    ida = ida + 1
+}
+
+
+des tre_dium_distancae(atu, bsu) {
+    pqa := ((atu.x - bsu.x) * (atu.x - bsu.x)) + ((atu.y - bsu.y) * (atu.y - bsu.y)) + ((atu.z - bsu.z) * (atu.z - bsu.z))
+    si pqa < 1 {
+        redeo 0.0
+    }
+    redeo sqrtae(pqa)
+}
+
+des get_min_distu(su, suum) {
+    mxu := {}
+    mae := powa(X, V).ae()
+    pro tu in suum {
+        tempae := tre_dium_distancae(tu, su)
+
+        si tempae < mae et tempae > 0.1 {
+            mxu = tu
+            mae = tempae.ae()
+        }
+    }
+    redeo mxu
+}
+
+listum_connectuum := []
+pro su in suum {
+    du := su
+    listum_connectuum = listum_connectuum.appenduum([du, get_min_distu(du, suum)])
+}
+
+sortuum := celerorduum(listum_connectuum, des (asdu) { 
+    tre_dium_distancae(asdu[0], asdu[1])
+})
+
+sortuum[0].es().dici()
