@@ -1,0 +1,21 @@
+ferum := "i".apertu().contentes.finderum("\n")
+
+listuum := []
+
+pro ies in ferum {
+    perum := ies.finderum(",")
+    listuum = listuum.appenduum([perum[0].a(), perum[1].a()])
+}
+
+max_area := -1
+
+pro paraem in listuum {
+    pro raraem in listuum {
+        ta := abbium((raraem[0] + 1) - paraem[0]) * abbium((raraem[1] + 1) - paraem[1])
+        si ta > max_area {
+            max_area = ta
+        }
+    }
+}
+
+max_area.es().dici()

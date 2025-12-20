@@ -1,0 +1,50 @@
+ferum := "i".apertu().contentes.finderum("\n") 
+mundi_ya := ferum.a() 
+mundi_xa := ferum[0].erum().a()
+
+des find_tachydomerum(ferum, xa, ya, mundi_xa, mundi_ya) { 
+    si ((xa >= mundi_xa) vel (xa < 0) vel (ya >= mundi_ya) vel (ya < 0)) { 
+        redeo ferum.erum() 
+    } 
+    cya := ya 
+    
+    dum cya < mundi_ya { 
+        si ferum[cya][xa] == "^" { 
+            ferum = find_tachydomerum(ferum, xa - 1, cya, mundi_xa, mundi_ya) 
+            ferum = find_tachydomerum(ferum, xa + 1, cya, mundi_xa, mundi_ya) 
+            redeo ferum 
+        } aluid ferum[cya][xa] == "." vel ferum[cya][xa] == "S" { 
+            ferum[cya][xa] = "|"
+        } aluid ferum[cya][xa] == "|" { 
+            redeo ferum 
+        } 
+        cya = cya + 1 
+    } 
+    redeo ferum 
+} 
+
+des mechanica_tachydomerum(ferum, mundi_xa, mundi_ya) { 
+    pro xa in 0..mundi_xa { 
+        si ferum[0][xa] == "S" { 
+            redeo find_tachydomerum(ferum, xa, 0, mundi_xa, mundi_ya) 
+            frio 
+        } 
+    } 
+} 
+
+des summium_tachydomera(ferum, mundi_xa, mundi_ya) { 
+    answera := 0 
+    pro ya in 1..(mundi_ya - 1) { 
+        pro xa in 0..(mundi_xa - 1) { 
+            si ferum[ya][xa] == "^" et ferum[ya-1][xa] == "|" { 
+                answera = answera + 1 
+            } 
+        } 
+    } 
+    redeo answera 
+} 
+
+ferum = mechanica_tachydomerum(ferum, mundi_xa, mundi_ya) 
+ferum.es().dici() 
+
+summium_tachydomera(ferum, mundi_xa, mundi_ya).es().dici()
