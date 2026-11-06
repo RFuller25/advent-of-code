@@ -1,0 +1,12 @@
+# 2018 day 22: Mode Maze
+#
+#   puzzle:   d22.md
+#   example:  i22 -> o22
+#   real:     a22 (swap it in below)
+Cursed Energy: i22
+
+Part "1":
+    Reveal: stdout
+
+Part "2":
+    Reveal: stdout

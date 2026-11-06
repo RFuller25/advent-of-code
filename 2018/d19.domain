@@ -1,0 +1,12 @@
+# 2018 day 19: Go With The Flow
+#
+#   puzzle:   d19.md
+#   example:  i19 -> o19
+#   real:     a19 (swap it in below)
+Cursed Energy: i19
+
+Part "1":
+    Reveal: stdout
+
+Part "2":
+    Reveal: stdout

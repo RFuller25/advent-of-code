@@ -1,0 +1,12 @@
+# 2018 day 1: Chronal Calibration
+#
+#   puzzle:   d1.md
+#   example:  i1 -> o1
+#   real:     a1 (swap it in below)
+Cursed Energy: i1
+
+Part "1":
+    Reveal: stdout
+
+Part "2":
+    Reveal: stdout

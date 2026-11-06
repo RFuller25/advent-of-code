@@ -1,0 +1,56 @@
+i7
+Split "\n"
+Cursed Technique: Match Pattern
+    Mode: Each 
+    Using: "{name:word} ({w:int})[? -> {kids:word+ sep=\", \"}]"
+Part "1": 
+    Map Each 
+        Cursed Object: name of (x) -> x.name 
+        Apply 
+            Using: (x) -> x.kids 
+        Map Each 
+            Using: (x) -> list(name, x) 
+    Filter 
+        Using: (x) -> length(x) > 0 
+    Flatten 
+    Convert To Graph 
+    Apply
+        Using: (x) -> root(x) 
+    stdout
+Part "2":
+    Map Each 
+        Cursed Object: name2 of (x) -> x.name 
+        Cursed Object: weight2 of (x) -> x.w 
+        Apply 
+            Using: (x) -> x.kids 
+        Map Each 
+            Using: (x) -> tuple(x, name2, weight2) 
+        Filter 
+            Using: (x) -> length(x) > 0 
+    Flatten 
+    Convert To Graph 
+    stdout 
+    Cursed Object: g of (x) -> x 
+    Cursed Object: BadNodeWeight as 0 
+    Cursed Object: current_node of (x) -> root(x) 
+    While 
+        Using: (x) -> BadNodeWeight = 0 
+        Cursed Object: ns of (x) -> neighbors(g, current_node) 
+        Apply 
+            Using: (x) -> ns 
+        Map Each 
+            Using: (x) -> tuple(x, weightof(g, x)) 
+        Sort By 
+            Using: (x) -> item(x, 1) 
+        Apply 
+            Using: (x) -> if item(first(x), 1) = item(last(x), 1)
+                             then tuple(current_node, weightof(g, current_node)) 
+                             else if item(first(x), 1) = item(item(x, 1), 1) 
+                             then last(x) else first(x) 
+        Cursed Tool: BadNodeWeight of (x) -> if current_node = item(x, 0) then item(x, 1) else 0 
+        Cursed Tool: current_node of (x) -> item(x, 0) 
+        Apply 
+            Using: (x) -> g 
+    Apply 
+        Using: (x) -> BadNodeWeight 
+    stdout

@@ -1,0 +1,12 @@
+# 2018 day 7: The Sum of Its Parts
+#
+#   puzzle:   d7.md
+#   example:  i7 -> o7
+#   real:     a7 (swap it in below)
+Cursed Energy: i7
+
+Part "1":
+    Reveal: stdout
+
+Part "2":
+    Reveal: stdout

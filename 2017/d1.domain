@@ -1,0 +1,22 @@
+i
+Split ""
+Convert to Integers
+Part "1":
+    Apply
+        Using: (x) -> concat(x, list(item(x,0)))
+    Window 2
+    Map Each
+        Using: (x) -> if item(x, 0) = item(x, 1) then item(x, 0) else 0
+    Sum
+    Reveal: stdout
+Part "2":
+    Apply
+        Using: (x) -> concat(x, x)
+    Window
+        Size: (x) -> (length(x) / 4) + 1
+    Map Each
+        Using: (x) -> if first(x) = last(x) then first(x) else 0
+    Apply
+        Using: (x) -> take(x, floor(tofloat(length(x)) / 1.5))
+    Sum
+    stdout

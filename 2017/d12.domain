@@ -1,0 +1,6 @@
+i12
+Lines
+Match Pattern
+    Mode: Each
+    Using: "{node:word} <-> {conns:int+ sep=\", \"}"
+# implemenmt graph objects....

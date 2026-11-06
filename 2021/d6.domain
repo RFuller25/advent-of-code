@@ -1,0 +1,12 @@
+# 2021 day 6: Lanternfish
+#
+#   puzzle:   d6.md
+#   example:  i6 -> o6
+#   real:     a6 (swap it in below)
+Cursed Energy: i6
+
+Part "1":
+    Reveal: stdout
+
+Part "2":
+    Reveal: stdout

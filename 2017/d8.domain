@@ -1,0 +1,7 @@
+i8
+Lines
+Match Pattern
+    Mode: Each
+    Case: inc "{register:word} inc {val:int} if {target:word} {cond:word} {value:int}"
+    Case: dec "{register:word} dec {val:int} if {target:word} {cond:word} {value:int}"
+Cursed Object: t as 0

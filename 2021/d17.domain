@@ -1,0 +1,12 @@
+# 2021 day 17: Trick Shot
+#
+#   puzzle:   d17.md
+#   example:  i17 -> o17
+#   real:     a17 (swap it in below)
+Cursed Energy: i17
+
+Part "1":
+    Reveal: stdout
+
+Part "2":
+    Reveal: stdout

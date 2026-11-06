@@ -1,0 +1,12 @@
+# 2021 day 12: Passage Pathing
+#
+#   puzzle:   d12.md
+#   example:  i12 -> o12
+#   real:     a12 (swap it in below)
+Cursed Energy: i12
+
+Part "1":
+    Reveal: stdout
+
+Part "2":
+    Reveal: stdout

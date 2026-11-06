@@ -1,0 +1,12 @@
+# 2018 day 13: Mine Cart Madness
+#
+#   puzzle:   d13.md
+#   example:  i13 -> o13
+#   real:     a13 (swap it in below)
+Cursed Energy: i13
+
+Part "1":
+    Reveal: stdout
+
+Part "2":
+    Reveal: stdout

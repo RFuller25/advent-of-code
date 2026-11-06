@@ -1,0 +1,12 @@
+# 2021 day 23: Amphipod
+#
+#   puzzle:   d23.md
+#   example:  i23 -> o23
+#   real:     a23 (swap it in below)
+Cursed Energy: i23
+
+Part "1":
+    Reveal: stdout
+
+Part "2":
+    Reveal: stdout

@@ -1,0 +1,27 @@
+i
+Lines
+Split Each " "
+Part "1":
+    Map Each
+        Sort
+        Window 2
+        Any
+            Using: (a) -> first(a) = last(a)
+    Sum By
+        Using: (x) -> if x then 0 else 1
+    stdout
+Part "2":
+    Map Each
+        Map Each
+            Apply
+                Using: (x) -> chars(x)
+            Sort
+        Domain Expansion: All Pairs
+            Mode: Map
+            Using: (a, b) -> if a = b then 0 else 1
+    Sum By
+        Any
+            Using: (x) -> x = 0
+        Apply
+            Using: (x) -> if x then 0 else 1
+    stdout

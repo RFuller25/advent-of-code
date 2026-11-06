@@ -1,0 +1,12 @@
+# 2018 day 24: Immune System Simulator 20XX
+#
+#   puzzle:   d24.md
+#   example:  i24 -> o24
+#   real:     a24 (swap it in below)
+Cursed Energy: i24
+
+Part "1":
+    Reveal: stdout
+
+Part "2":
+    Reveal: stdout

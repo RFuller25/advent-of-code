@@ -1,0 +1,12 @@
+# 2021 day 5: Hydrothermal Venture
+#
+#   puzzle:   d5.md
+#   example:  i5 -> o5
+#   real:     a5 (swap it in below)
+Cursed Energy: i5
+
+Part "1":
+    Reveal: stdout
+
+Part "2":
+    Reveal: stdout

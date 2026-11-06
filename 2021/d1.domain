@@ -1,0 +1,22 @@
+# 2021 day 1: Sonar Sweep
+#
+#   puzzle:   d1.md
+#   example:  i1 -> o1
+#   real:     a1 (swap it in below)
+Cursed Energy: a1
+Ints
+
+Part "1":
+    Window 2 1
+    
+    Count Matching
+        Using: (x) -> item(x, 0) < item(x, 1)
+    Reveal: stdout
+
+Part "2":
+    Window 3 1
+    Sum Each
+    Window 2 1
+    Count Matching
+        Using: (x) -> item(x, 0) < item(x, 1)
+    Reveal: stdout

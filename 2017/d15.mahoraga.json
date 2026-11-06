@@ -1,0 +1,758 @@
+{
+  "version": 1,
+  "program": "d15.domain",
+  "input": "i15",
+  "expected": "o15",
+  "adapted_at": "2026-08-13T04:21:49.673885029Z",
+  "artifact": "d15-adapted",
+  "input_fingerprint": {
+    "bytes": 55,
+    "lines": 1,
+    "sha256": "c716fd3640ebdc0bea952274823ee54aed0a5b7ced3c93b3b45f9c4e449b5bf5"
+  },
+  "baseline": {
+    "mean_nanos": 712684974,
+    "min_nanos": 683003990,
+    "stddev_nanos": 18202083,
+    "runs": 7
+  },
+  "champion": {
+    "mean_nanos": 704189327,
+    "min_nanos": 685321395,
+    "stddev_nanos": 13890170,
+    "runs": 7
+  },
+  "speedup": 1.0160615044368602,
+  "noise_floor_pct": 0.9653269327942924,
+  "final_baseline": {
+    "mean_nanos": 715499667,
+    "min_nanos": 686546981,
+    "stddev_nanos": 15705451,
+    "runs": 7
+  },
+  "adaptations": [
+    {
+      "turn": 3,
+      "turn_name": "profile-guided rebuild",
+      "id": "PGO from this run's profile",
+      "tier": "general",
+      "effect_pct": -1.196747701928084,
+      "kept": false,
+      "reason": "-1.2% — below the 2.0% worth recording",
+      "measured": {
+        "mean_nanos": 852581129,
+        "min_nanos": 839174474,
+        "stddev_nanos": 11155550,
+        "runs": 7
+      }
+    },
+    {
+      "turn": 4,
+      "turn_name": "pass ablation",
+      "id": "without simplifyLambdaBodies",
+      "tier": "general",
+      "effect_pct": -1.0697161858026165,
+      "kept": false,
+      "reason": "-1.1% — below the 2.0% worth recording",
+      "measured": {
+        "mean_nanos": 867540896,
+        "min_nanos": 850569291,
+        "stddev_nanos": 0,
+        "runs": 2
+      }
+    },
+    {
+      "turn": 4,
+      "turn_name": "pass ablation",
+      "id": "without fuseSortThenTopK",
+      "tier": "general",
+      "effect_pct": -5.638219458409941,
+      "kept": false,
+      "reason": "slower by 5.6%",
+      "measured": {
+        "mean_nanos": 927049463,
+        "min_nanos": 869968117,
+        "stddev_nanos": 0,
+        "runs": 2
+      }
+    },
+    {
+      "turn": 4,
+      "turn_name": "pass ablation",
+      "id": "without fuseSortTakeItem",
+      "tier": "general",
+      "effect_pct": -3.1781033635570632,
+      "kept": false,
+      "reason": "slower by 3.2%",
+      "measured": {
+        "mean_nanos": 893687035,
+        "min_nanos": 867575688,
+        "stddev_nanos": 0,
+        "runs": 2
+      }
+    },
+    {
+      "turn": 4,
+      "turn_name": "pass ablation",
+      "id": "without fuseAllPairsSum",
+      "tier": "general",
+      "effect_pct": -1.3966358762093203,
+      "kept": false,
+      "reason": "-1.4% — below the 2.0% worth recording",
+      "measured": {
+        "mean_nanos": 875075865,
+        "min_nanos": 864331015,
+        "stddev_nanos": 9126840,
+        "runs": 7
+      }
+    },
+    {
+      "turn": 4,
+      "turn_name": "pass ablation",
+      "id": "without fusePairDiff",
+      "tier": "general",
+      "effect_pct": 1.299193944365886,
+      "kept": false,
+      "reason": "1.3% — below the 2.0% worth recording",
+      "measured": {
+        "mean_nanos": 868307675,
+        "min_nanos": 848124162,
+        "stddev_nanos": 0,
+        "runs": 2
+      }
+    },
+    {
+      "turn": 4,
+      "turn_name": "pass ablation",
+      "id": "without fuseAllPairsProduct",
+      "tier": "general",
+      "effect_pct": 1.308168864869643,
+      "kept": false,
+      "reason": "1.3% — below the 2.0% worth recording",
+      "measured": {
+        "mean_nanos": 858376524,
+        "min_nanos": 835953798,
+        "stddev_nanos": 12899348,
+        "runs": 7
+      }
+    },
+    {
+      "turn": 4,
+      "turn_name": "pass ablation",
+      "id": "without fuseTripleSum",
+      "tier": "general",
+      "effect_pct": -0.12384517184398326,
+      "kept": false,
+      "reason": "-0.1% — below the 2.0% worth recording",
+      "measured": {
+        "mean_nanos": 853613108,
+        "min_nanos": 849766739,
+        "stddev_nanos": 0,
+        "runs": 2
+      }
+    },
+    {
+      "turn": 4,
+      "turn_name": "pass ablation",
+      "id": "without fuseLinearMapExtremum",
+      "tier": "general",
+      "effect_pct": 3.3297649636416913,
+      "kept": false,
+      "reason": "did not survive the final re-measurement",
+      "measured": {
+        "mean_nanos": 841973365,
+        "min_nanos": 819412617,
+        "stddev_nanos": 15770191,
+        "runs": 7
+      }
+    },
+    {
+      "turn": 4,
+      "turn_name": "pass ablation",
+      "id": "without fuseWindowReduce",
+      "tier": "general",
+      "effect_pct": -1.8504122629236224,
+      "kept": false,
+      "reason": "-1.9% — below the 2.0% worth recording",
+      "measured": {
+        "mean_nanos": 861750385,
+        "min_nanos": 860455824,
+        "stddev_nanos": 0,
+        "runs": 2
+      }
+    },
+    {
+      "turn": 4,
+      "turn_name": "pass ablation",
+      "id": "without fuseSearchTarget",
+      "tier": "general",
+      "effect_pct": -0.8460173151835062,
+      "kept": false,
+      "reason": "-0.8% — below the 2.0% worth recording",
+      "measured": {
+        "mean_nanos": 863638702,
+        "min_nanos": 860067974,
+        "stddev_nanos": 0,
+        "runs": 2
+      }
+    },
+    {
+      "turn": 4,
+      "turn_name": "pass ablation",
+      "id": "without fuseFilterFirst",
+      "tier": "general",
+      "effect_pct": -8.871228155263227,
+      "kept": false,
+      "reason": "slower by 8.9%",
+      "measured": {
+        "mean_nanos": 936853004,
+        "min_nanos": 855579574,
+        "stddev_nanos": 142628838,
+        "runs": 7
+      }
+    },
+    {
+      "turn": 4,
+      "turn_name": "pass ablation",
+      "id": "without fuseUnfoldStream",
+      "tier": "general",
+      "effect_pct": -397.11046637476494,
+      "kept": false,
+      "reason": "slower by 397.1%",
+      "measured": {
+        "mean_nanos": 3519418739,
+        "min_nanos": 3440008999,
+        "stddev_nanos": 0,
+        "runs": 2
+      }
+    },
+    {
+      "turn": 4,
+      "turn_name": "pass ablation",
+      "id": "without fuseSortReverse",
+      "tier": "general",
+      "effect_pct": -5.934682463401859,
+      "kept": false,
+      "reason": "slower by 5.9%",
+      "measured": {
+        "mean_nanos": 772037261,
+        "min_nanos": 704322539,
+        "stddev_nanos": 62759383,
+        "runs": 7
+      }
+    },
+    {
+      "turn": 4,
+      "turn_name": "pass ablation",
+      "id": "without elideRedundantSort",
+      "tier": "general",
+      "effect_pct": 0.661598977063309,
+      "kept": false,
+      "reason": "0.7% — below the 2.0% worth recording",
+      "measured": {
+        "mean_nanos": 713061184,
+        "min_nanos": 692328316,
+        "stddev_nanos": 0,
+        "runs": 2
+      }
+    },
+    {
+      "turn": 4,
+      "turn_name": "pass ablation",
+      "id": "without hoistUniqueBeforeSort",
+      "tier": "general",
+      "effect_pct": -1.1696193075405767,
+      "kept": false,
+      "reason": "-1.2% — below the 2.0% worth recording",
+      "measured": {
+        "mean_nanos": 718628657,
+        "min_nanos": 698955224,
+        "stddev_nanos": 0,
+        "runs": 2
+      }
+    },
+    {
+      "turn": 4,
+      "turn_name": "pass ablation",
+      "id": "without elideReorderBeforeReduce",
+      "tier": "general",
+      "effect_pct": -0.10579634904607488,
+      "kept": false,
+      "reason": "-0.1% — below the 2.0% worth recording",
+      "measured": {
+        "mean_nanos": 729327118,
+        "min_nanos": 706818702,
+        "stddev_nanos": 18827490,
+        "runs": 7
+      }
+    },
+    {
+      "turn": 4,
+      "turn_name": "pass ablation",
+      "id": "without cancelReversePairs",
+      "tier": "general",
+      "effect_pct": 1.0355721263882742,
+      "kept": false,
+      "reason": "1.0% — below the 2.0% worth recording",
+      "measured": {
+        "mean_nanos": 700939778,
+        "min_nanos": 693884475,
+        "stddev_nanos": 0,
+        "runs": 2
+      }
+    },
+    {
+      "turn": 4,
+      "turn_name": "pass ablation",
+      "id": "without elideRedundantUnique",
+      "tier": "general",
+      "effect_pct": 2.3218460979948996,
+      "kept": false,
+      "reason": "2.3%, but inside the measurement's own uncertainty",
+      "measured": {
+        "mean_nanos": 717457206,
+        "min_nanos": 693159760,
+        "stddev_nanos": 19862085,
+        "runs": 7
+      }
+    },
+    {
+      "turn": 4,
+      "turn_name": "pass ablation",
+      "id": "without elideUniqueBeforeExtremum",
+      "tier": "general",
+      "effect_pct": -0.4972958616120419,
+      "kept": false,
+      "reason": "-0.5% — below the 2.0% worth recording",
+      "measured": {
+        "mean_nanos": 703022326,
+        "min_nanos": 694176287,
+        "stddev_nanos": 0,
+        "runs": 2
+      }
+    },
+    {
+      "turn": 4,
+      "turn_name": "pass ablation",
+      "id": "without elideIdentityMap",
+      "tier": "general",
+      "effect_pct": -1.7980274065410342,
+      "kept": false,
+      "reason": "-1.8% — below the 2.0% worth recording",
+      "measured": {
+        "mean_nanos": 718345741,
+        "min_nanos": 698657673,
+        "stddev_nanos": 17365600,
+        "runs": 7
+      }
+    },
+    {
+      "turn": 4,
+      "turn_name": "pass ablation",
+      "id": "without elideMapBeforeCount",
+      "tier": "general",
+      "effect_pct": -14.779298215472606,
+      "kept": false,
+      "reason": "slower by 14.8%",
+      "measured": {
+        "mean_nanos": 1386040663,
+        "min_nanos": 1280817792,
+        "stddev_nanos": 0,
+        "runs": 2
+      }
+    },
+    {
+      "turn": 4,
+      "turn_name": "pass ablation",
+      "id": "without fuseMapMap",
+      "tier": "general",
+      "effect_pct": 0.6079878060251053,
+      "kept": false,
+      "reason": "0.6% — below the 2.0% worth recording",
+      "measured": {
+        "mean_nanos": 1363886180,
+        "min_nanos": 1330842931,
+        "stddev_nanos": 0,
+        "runs": 2
+      }
+    },
+    {
+      "turn": 4,
+      "turn_name": "pass ablation",
+      "id": "without fuseFilterFilter",
+      "tier": "general",
+      "effect_pct": -2.430478084052762,
+      "kept": false,
+      "reason": "slower by 2.4%",
+      "measured": {
+        "mean_nanos": 717263321,
+        "min_nanos": 667750640,
+        "stddev_nanos": 33206706,
+        "runs": 7
+      }
+    },
+    {
+      "turn": 4,
+      "turn_name": "pass ablation",
+      "id": "without fuseFilterCount",
+      "tier": "general",
+      "effect_pct": 0.3166447770604268,
+      "kept": false,
+      "reason": "0.3% — below the 2.0% worth recording",
+      "measured": {
+        "mean_nanos": 715661797,
+        "min_nanos": 688336587,
+        "stddev_nanos": 16490374,
+        "runs": 7
+      }
+    },
+    {
+      "turn": 4,
+      "turn_name": "pass ablation",
+      "id": "without fuseFoldSum",
+      "tier": "general",
+      "effect_pct": -3.184821332343473,
+      "kept": false,
+      "reason": "slower by 3.2%",
+      "measured": {
+        "mean_nanos": 746193332,
+        "min_nanos": 737590636,
+        "stddev_nanos": 0,
+        "runs": 2
+      }
+    },
+    {
+      "turn": 4,
+      "turn_name": "pass ablation",
+      "id": "without fuseMapReduceBy",
+      "tier": "general",
+      "effect_pct": -5.649065291662867,
+      "kept": false,
+      "reason": "slower by 5.6%",
+      "measured": {
+        "mean_nanos": 760137623,
+        "min_nanos": 740578522,
+        "stddev_nanos": 0,
+        "runs": 2
+      }
+    },
+    {
+      "turn": 4,
+      "turn_name": "pass ablation",
+      "id": "without fuseZipWith",
+      "tier": "general",
+      "effect_pct": 0.015529201510536841,
+      "kept": false,
+      "reason": "0.0% — below the 2.0% worth recording",
+      "measured": {
+        "mean_nanos": 742054265,
+        "min_nanos": 717646827,
+        "stddev_nanos": 14279160,
+        "runs": 7
+      }
+    },
+    {
+      "turn": 4,
+      "turn_name": "pass ablation",
+      "id": "without elideConstPredicates",
+      "tier": "general",
+      "effect_pct": -1.1396445099012817,
+      "kept": false,
+      "reason": "-1.1% — below the 2.0% worth recording",
+      "measured": {
+        "mean_nanos": 760405527,
+        "min_nanos": 746480319,
+        "stddev_nanos": 0,
+        "runs": 2
+      }
+    },
+    {
+      "turn": 4,
+      "turn_name": "pass ablation",
+      "id": "without elideConstEarlyExits",
+      "tier": "general",
+      "effect_pct": 0.906880991218498,
+      "kept": false,
+      "reason": "0.9% — below the 2.0% worth recording",
+      "measured": {
+        "mean_nanos": 736024679,
+        "min_nanos": 729231547,
+        "stddev_nanos": 0,
+        "runs": 2
+      }
+    },
+    {
+      "turn": 5,
+      "turn_name": "pass ordering",
+      "id": "max rounds 1",
+      "tier": "general",
+      "effect_pct": 1.7947943405726925,
+      "kept": false,
+      "reason": "1.8% — below the 2.0% worth recording",
+      "measured": {
+        "mean_nanos": 732563571,
+        "min_nanos": 698707064,
+        "stddev_nanos": 18501778,
+        "runs": 7
+      }
+    },
+    {
+      "turn": 5,
+      "turn_name": "pass ordering",
+      "id": "max rounds 2",
+      "tier": "general",
+      "effect_pct": 3.310065702088442,
+      "kept": false,
+      "reason": "3.3%, but inside the measurement's own uncertainty",
+      "measured": {
+        "mean_nanos": 1054439532,
+        "min_nanos": 759200784,
+        "stddev_nanos": 231615303,
+        "runs": 7
+      }
+    },
+    {
+      "turn": 5,
+      "turn_name": "pass ordering",
+      "id": "max rounds 4",
+      "tier": "general",
+      "effect_pct": 0.338987854799414,
+      "kept": false,
+      "reason": "0.3% — below the 2.0% worth recording",
+      "measured": {
+        "mean_nanos": 690794333,
+        "min_nanos": 680285748,
+        "stddev_nanos": 7969926,
+        "runs": 7
+      }
+    },
+    {
+      "turn": 5,
+      "turn_name": "pass ordering",
+      "id": "max rounds 8",
+      "tier": "general",
+      "effect_pct": -2.6067320401255163,
+      "kept": false,
+      "reason": "slower by 2.6%",
+      "measured": {
+        "mean_nanos": 704532611,
+        "min_nanos": 694933512,
+        "stddev_nanos": 0,
+        "runs": 2
+      }
+    },
+    {
+      "turn": 5,
+      "turn_name": "pass ordering",
+      "id": "shuffled order #1",
+      "tier": "general",
+      "effect_pct": 1.3238600589481289,
+      "kept": false,
+      "reason": "1.3% — below the 2.0% worth recording",
+      "measured": {
+        "mean_nanos": 697441325,
+        "min_nanos": 691582301,
+        "stddev_nanos": 0,
+        "runs": 2
+      }
+    },
+    {
+      "turn": 5,
+      "turn_name": "pass ordering",
+      "id": "shuffled order #2",
+      "tier": "general",
+      "effect_pct": -0.4679530917775994,
+      "kept": false,
+      "reason": "-0.5% — below the 2.0% worth recording",
+      "measured": {
+        "mean_nanos": 711877569,
+        "min_nanos": 690146731,
+        "stddev_nanos": 18169360,
+        "runs": 7
+      }
+    },
+    {
+      "turn": 5,
+      "turn_name": "pass ordering",
+      "id": "shuffled order #3",
+      "tier": "general",
+      "effect_pct": -0.7104595113861591,
+      "kept": false,
+      "reason": "-0.7% — below the 2.0% worth recording",
+      "measured": {
+        "mean_nanos": 713170625,
+        "min_nanos": 697221887,
+        "stddev_nanos": 14562417,
+        "runs": 7
+      }
+    },
+    {
+      "turn": 5,
+      "turn_name": "pass ordering",
+      "id": "shuffled order #4",
+      "tier": "general",
+      "effect_pct": -3.991740465378889,
+      "kept": false,
+      "reason": "slower by 4.0%",
+      "measured": {
+        "mean_nanos": 717802010,
+        "min_nanos": 707389800,
+        "stddev_nanos": 0,
+        "runs": 2
+      }
+    },
+    {
+      "turn": 5,
+      "turn_name": "pass ordering",
+      "id": "shuffled order #5",
+      "tier": "general",
+      "effect_pct": -2.135876485486605,
+      "kept": false,
+      "reason": "slower by 2.1%",
+      "measured": {
+        "mean_nanos": 738082835,
+        "min_nanos": 734716356,
+        "stddev_nanos": 0,
+        "runs": 2
+      }
+    },
+    {
+      "turn": 5,
+      "turn_name": "pass ordering",
+      "id": "shuffled order #6",
+      "tier": "general",
+      "effect_pct": -2.8579999656077697,
+      "kept": false,
+      "reason": "slower by 2.9%",
+      "measured": {
+        "mean_nanos": 728901606,
+        "min_nanos": 706308654,
+        "stddev_nanos": 0,
+        "runs": 2
+      }
+    },
+    {
+      "turn": 5,
+      "turn_name": "pass ordering",
+      "id": "shuffled order #7",
+      "tier": "general",
+      "effect_pct": 0.20797250764504116,
+      "kept": false,
+      "reason": "0.2% — below the 2.0% worth recording",
+      "measured": {
+        "mean_nanos": 705703032,
+        "min_nanos": 687925301,
+        "stddev_nanos": 9380730,
+        "runs": 7
+      }
+    },
+    {
+      "turn": 5,
+      "turn_name": "pass ordering",
+      "id": "shuffled order #8",
+      "tier": "general",
+      "effect_pct": -1.5817213532642014,
+      "kept": false,
+      "reason": "-1.6% — below the 2.0% worth recording",
+      "measured": {
+        "mean_nanos": 712928492,
+        "min_nanos": 708612214,
+        "stddev_nanos": 0,
+        "runs": 2
+      }
+    },
+    {
+      "turn": 5,
+      "turn_name": "pass ordering",
+      "id": "shuffled order #9",
+      "tier": "general",
+      "effect_pct": -1.3911129180384567,
+      "kept": false,
+      "reason": "-1.4% — below the 2.0% worth recording",
+      "measured": {
+        "mean_nanos": 734155291,
+        "min_nanos": 730452713,
+        "stddev_nanos": 0,
+        "runs": 2
+      }
+    },
+    {
+      "turn": 5,
+      "turn_name": "pass ordering",
+      "id": "shuffled order #10",
+      "tier": "general",
+      "effect_pct": -3.151806933888881,
+      "kept": false,
+      "reason": "slower by 3.2%",
+      "measured": {
+        "mean_nanos": 755246165,
+        "min_nanos": 739798701,
+        "stddev_nanos": 0,
+        "runs": 2
+      }
+    },
+    {
+      "turn": 5,
+      "turn_name": "pass ordering",
+      "id": "shuffled order #11",
+      "tier": "general",
+      "effect_pct": -14.869243568116827,
+      "kept": false,
+      "reason": "slower by 14.9%",
+      "measured": {
+        "mean_nanos": 1340885829,
+        "min_nanos": 1154025411,
+        "stddev_nanos": 0,
+        "runs": 2
+      }
+    },
+    {
+      "turn": 5,
+      "turn_name": "pass ordering",
+      "id": "shuffled order #12",
+      "tier": "general",
+      "effect_pct": 6.48593916595257,
+      "kept": false,
+      "reason": "6.5%, but inside the measurement's own uncertainty",
+      "measured": {
+        "mean_nanos": 715713766,
+        "min_nanos": 676010898,
+        "stddev_nanos": 22113884,
+        "runs": 7
+      }
+    },
+    {
+      "turn": 6,
+      "turn_name": "templated codegen edits",
+      "id": "collector off for one run (17 collections in the baseline)",
+      "tier": "guarded",
+      "effect_pct": -11.260932346815672,
+      "kept": false,
+      "reason": "slower by 11.3%",
+      "measured": {
+        "mean_nanos": 798200624,
+        "min_nanos": 795257078,
+        "stddev_nanos": 0,
+        "runs": 2
+      }
+    }
+  ],
+  "schedule": {},
+  "build": {},
+  "tuning": {},
+  "input_facts": {
+    "bytes": 55,
+    "segments": 2,
+    "ascii": true,
+    "longest_line": 27,
+    "heap_sys": 389513216,
+    "total_alloc": 562428408,
+    "num_gc": 17
+  },
+  "reconnaissance_note": "the interpreted reconnaissance run did not finish in 1m30s",
+  "contract": {},
+  "tier": "pinned",
+  "turns_not_implemented": 0,
+  "inconclusive": 3,
+  "reverted_to_baseline": true
+}

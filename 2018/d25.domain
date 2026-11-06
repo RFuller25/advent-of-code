@@ -1,0 +1,12 @@
+# 2018 day 25: Four-Dimensional Adventure
+#
+#   puzzle:   d25.md
+#   example:  i25 -> o25
+#   real:     a25 (swap it in below)
+Cursed Energy: i25
+
+Part "1":
+    Reveal: stdout
+
+Part "2":
+    Reveal: stdout

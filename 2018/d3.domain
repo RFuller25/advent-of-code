@@ -1,0 +1,12 @@
+# 2018 day 3: No Matter How You Slice It
+#
+#   puzzle:   d3.md
+#   example:  i3 -> o3
+#   real:     a3 (swap it in below)
+Cursed Energy: i3
+
+Part "1":
+    Reveal: stdout
+
+Part "2":
+    Reveal: stdout

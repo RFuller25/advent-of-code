@@ -1,0 +1,9 @@
+recipe store_part1() {
+  input = chars("1238894570981704")
+  lastchr = nobox
+  result = nobox
+  knead (i = 0; i < slices(input); i++) {
+    deliver( toInt(input[i]))
+  }
+}
+

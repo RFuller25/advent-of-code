@@ -1,0 +1,18 @@
+i
+Split "\n"
+Split Each "\t"
+Convert Each to Integers
+Part "1":
+    Map Each
+        Using: (x) -> max(x) - min(x)
+    Sum
+    Reveal: stdout
+Part "2":
+    Map Each
+        Domain Expansion: All Pairs
+            Mode: First
+            Using: (a, b) -> (a % b = 0) or (b % a = 0)
+    Map Each
+        Using: (x) -> max(x) / min(x)
+    Sum
+    stdout
