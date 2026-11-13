@@ -18,39 +18,39 @@ Part "1":
         Using: (x) -> root(x) 
     stdout
 Part "2":
-    Map Each 
-        Cursed Object: name2 of (x) -> x.name 
-        Cursed Object: weight2 of (x) -> x.w 
-        Apply 
-            Using: (x) -> x.kids 
-        Map Each 
-            Using: (x) -> tuple(x, name2, weight2) 
-        Filter 
-            Using: (x) -> length(x) > 0 
-    Flatten 
-    Convert To Graph 
-    stdout 
-    Cursed Object: g of (x) -> x 
-    Cursed Object: BadNodeWeight as 0 
-    Cursed Object: current_node of (x) -> root(x) 
-    While 
-        Using: (x) -> BadNodeWeight = 0 
-        Cursed Object: ns of (x) -> neighbors(g, current_node) 
-        Apply 
-            Using: (x) -> ns 
-        Map Each 
-            Using: (x) -> tuple(x, weightof(g, x)) 
-        Sort By 
-            Using: (x) -> item(x, 1) 
-        Apply 
-            Using: (x) -> if item(first(x), 1) = item(last(x), 1)
-                             then tuple(current_node, weightof(g, current_node)) 
-                             else if item(first(x), 1) = item(item(x, 1), 1) 
-                             then last(x) else first(x) 
-        Cursed Tool: BadNodeWeight of (x) -> if current_node = item(x, 0) then item(x, 1) else 0 
-        Cursed Tool: current_node of (x) -> item(x, 0) 
-        Apply 
-            Using: (x) -> g 
-    Apply 
-        Using: (x) -> BadNodeWeight 
+    Cursed Object: ws Of
+        Map Each
+            Using: (x) -> tuple(x.name, x.w)
+        Channeled Energy: Convert To Map
+    Map Each
+        Cursed Object: name2 of (x) -> x.name
+        Apply
+            Using: (x) -> x.kids
+        Map Each
+            Using: (x) -> tuple(name2, x, getor(ws, x, 0))
+    Filter
+        Using: (x) -> length(x) > 0
+    Flatten
+    Convert To Graph
+    Cursed Object: g of (x) -> x
+    Cursed Object: ans As 0
+    Cursed Object: want As 0
+    Cursed Object: cur of (x) -> root(x)
+    While
+        Using: (x) -> ans = 0
+        Apply
+            Using: (x) -> neighbors(g, cur)
+        Map Each
+            Using: (k) -> tuple(k, getor(ws, k, 0) + weightsum(subgraph(g, reachable(g, k))))
+        Sort By
+            Using: (p) -> item(p, 1)
+        Apply
+            Using: (s) -> if length(s) = 0 or item(first(s), 1) = item(last(s), 1) then tuple(cur, -1) else if item(first(s), 1) = item(item(s, 1), 1) then tuple(item(last(s), 0), item(item(s, 1), 1)) else tuple(item(first(s), 0), item(item(s, 1), 1))
+        Cursed Tool: ans of (r) -> if item(r, 1) = -1 then want - weightsum(subgraph(g, reachable(g, cur))) else 0
+        Cursed Tool: want of (r) -> if item(r, 1) = -1 then want else item(r, 1)
+        Cursed Tool: cur of (r) -> item(r, 0)
+        Apply
+            Using: (r) -> g
+    Apply
+        Using: (x) -> ans
     stdout
