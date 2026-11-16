@@ -2,32 +2,31 @@ i8
 Lines
 Match Pattern
     Mode: Each
-    Case: inc "{register:word} inc {val:int} if {comp1:word} {cond:word} {comp2:int}"
-    Case: dec "{register:word} dec {val:int} if {comp1:word} {cond:word} {comp2:int}"
+    Using: "{register:word} {kind:word} {val:int} if {comp1:word} {cond:word} {comp2:int}"
 Cursed Object: d As emptymap("", 0)
 Cursed Object: iterator As 0
 Cursed Object: highestVal As 0
-Simple Domain: While
+While
     Using: (xs) -> length(xs) > iterator
     Cursed Object: xs Of (x) -> x
     Apply
-        Using: (xs) -> 
-                     consider x as item(xs, iterator) in
-                     consider registerVal as getor(d, x.comp1, 0) in
-                     consider oldTargetRegisterVal as getor(d, x.register, 0) in
-                     consider truthiness as if (x.cond = "==" and registerVal = x.comp2) 
-                     or (x.cond = ">=" and registerVal >= x.comp2) 
-                     or (x.cond = "<=" and registerVal <= x.comp2)
-                     or (x.cond = "!=" and not (registerVal =  x.comp2))
-                     or (x.cond = ">" and registerVal > x.comp2)
-                     or (x.cond = "<" and registerVal < x.comp2)
-                     then 1  else -1 in
-                     (d := insert(d, x.register, if truthiness = 1 then (if x.kind = "inc" then 1 else -1) * x.val  + oldTargetRegisterVal else oldTargetRegisterVal) 
-                     also iterator := iterator + 1)
-                     also highestVal := if max(values(d)) > highestVal then max(values(d)) else highestVal
-                     
+        Using: (xs) ->
+            consider x as item(xs, iterator) in
+            consider registerVal as getor(d, x.comp1, 0) in
+            consider oldTargetRegisterVal as getor(d, x.register, 0) in
+            consider truthiness as if (x.cond = "==" and registerVal = x.comp2)
+            or (x.cond = ">=" and registerVal >= x.comp2)
+            or (x.cond = "<=" and registerVal <= x.comp2)
+            or (x.cond = "!=" and not (registerVal =  x.comp2))
+            or (x.cond = ">" and registerVal > x.comp2)
+            or (x.cond = "<" and registerVal < x.comp2)
+            then 1  else -1 in
+            (d := insert(d, x.register, if truthiness = 1 then (if x.kind = "inc" then 1 else -1) * x.val  + oldTargetRegisterVal else oldTargetRegisterVal)
+            also iterator := iterator + 1)
+            also highestVal := if max(values(d)) > highestVal then max(values(d)) else highestVal
+
     Apply
-        Using: (x) -> xs                   
+        Using: (x) -> xs
 Part "1":
     Apply
         Using: (x) -> d

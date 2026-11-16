@@ -16,7 +16,7 @@ Part "2":
             Apply
                 Using: (x) -> chars(x)
             Sort
-        Domain Expansion: All Pairs
+        All Pairs
             Mode: Map
             Using: (a, b) -> if a = b then 0 else 1
     Sum By

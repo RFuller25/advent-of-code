@@ -27,16 +27,7 @@ Part "2":
     While
         Using: (st) -> item(st, 9) <= item(st, 0)
         Apply
-            Using: (st) ->
-                consider n as item(st, 0) in
-                consider map as item(st, 1) in
-                consider x as item(st, 2) in
-                consider y as item(st, 3) in
-                consider dx as item(st, 4) in
-                consider dy as item(st, 5) in
-                consider legLen as item(st, 6) in
-                consider legLeft as item(st, 7) in
-                consider turnPhase as item(st, 8) in
+            Using: ((n, map, x, y, dx, dy, legLen, legLeft, turnPhase, _)) ->
                 consider nx as x + dx in
                 consider ny as y + dy in
                 consider s as

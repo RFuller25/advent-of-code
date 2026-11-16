@@ -8,10 +8,10 @@ Ints
 
 Part "1":
     Window 2 1
-    
+
     Count Matching
         Using: (x) -> item(x, 0) < item(x, 1)
-    Reveal: stdout
+    stdout
 
 Part "2":
     Window 3 1
@@ -19,4 +19,4 @@ Part "2":
     Window 2 1
     Count Matching
         Using: (x) -> item(x, 0) < item(x, 1)
-    Reveal: stdout
+    stdout

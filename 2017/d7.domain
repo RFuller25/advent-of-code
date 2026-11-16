@@ -1,21 +1,21 @@
 i7
 Split "\n"
-Cursed Technique: Match Pattern
-    Mode: Each 
+Match Pattern
+    Mode: Each
     Using: "{name:word} ({w:int})[? -> {kids:word+ sep=\", \"}]"
-Part "1": 
-    Map Each 
-        Cursed Object: name of (x) -> x.name 
-        Apply 
-            Using: (x) -> x.kids 
-        Map Each 
-            Using: (x) -> list(name, x) 
-    Filter 
-        Using: (x) -> length(x) > 0 
-    Flatten 
-    Convert To Graph 
+Part "1":
+    Map Each
+        Cursed Object: name of (x) -> x.name
+        Apply
+            Using: (x) -> x.kids
+        Map Each
+            Using: (x) -> list(name, x)
+    Filter
+        Using: (x) -> length(x) > 0
+    Flatten
+    Convert To Graph
     Apply
-        Using: (x) -> root(x) 
+        Using: (x) -> root(x)
     stdout
 Part "2":
     Cursed Object: ws Of
@@ -43,12 +43,12 @@ Part "2":
         Map Each
             Using: (k) -> tuple(k, getor(ws, k, 0) + weightsum(subgraph(g, reachable(g, k))))
         Sort By
-            Using: (p) -> item(p, 1)
+            Using: ((_, varb)) -> varb
         Apply
             Using: (s) -> if length(s) = 0 or item(first(s), 1) = item(last(s), 1) then tuple(cur, -1) else if item(first(s), 1) = item(item(s, 1), 1) then tuple(item(last(s), 0), item(item(s, 1), 1)) else tuple(item(first(s), 0), item(item(s, 1), 1))
-        Cursed Tool: ans of (r) -> if item(r, 1) = -1 then want - weightsum(subgraph(g, reachable(g, cur))) else 0
-        Cursed Tool: want of (r) -> if item(r, 1) = -1 then want else item(r, 1)
-        Cursed Tool: cur of (r) -> item(r, 0)
+        Cursed Tool: ans of ((_, varb)) -> if varb = -1 then want - weightsum(subgraph(g, reachable(g, cur))) else 0
+        Cursed Tool: want of ((_, varb)) -> if varb = -1 then want else varb
+        Cursed Tool: cur of ((vara, _)) -> vara
         Apply
             Using: (r) -> g
     Apply

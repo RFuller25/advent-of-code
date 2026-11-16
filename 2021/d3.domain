@@ -3,10 +3,29 @@
 #   puzzle:   d3.md
 #   example:  i3 -> o3
 #   real:     a3 (swap it in below)
-Cursed Energy: i3
+Cursed Energy: a3
 
 Part "1":
-    Reveal: stdout
+    Digit Grid
+    Rotate Grid
+        Mode: Left
+    Convert To Rows
+    Map Each
+        Using: (xs) -> list(round(tofloat(sum(xs)) / length(xs)), if round(tofloat(sum(xs)) / length(xs)) = 0 then 1 else 0)
+    Convert To Grid
+    Rotate Grid
+        Mode: Right
+    Convert To Rows
+    Map Each
+        Fold
+            Seed: ""
+            Using: (acc, x) -> textjoin(list(acc, totext(x)), "")
+        Apply
+            Using: (x) -> frombin(x)
+    Apply
+        Using: (x) -> first(x) * last(x)
+    stdout
 
 Part "2":
-    Reveal: stdout
+
+    stdout

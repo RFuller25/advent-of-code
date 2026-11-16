@@ -6,10 +6,10 @@ Part "1":
     Map Each
         Using: (x) -> max(x) - min(x)
     Sum
-    Reveal: stdout
+    stdout
 Part "2":
     Map Each
-        Domain Expansion: All Pairs
+        All Pairs
             Mode: First
             Using: (a, b) -> (a % b = 0) or (b % a = 0)
     Map Each
