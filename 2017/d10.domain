@@ -1,4 +1,60 @@
-Cursed Energy: i17
-Cursed Technique: Split Text by ","
-Convert to Integers
+i10
+Part "2":
+    Split ""
+    Map Each
+        Using: (x) -> ord(x)
+    Cursed Object: twisters of (x) -> concat(x, list(17, 31, 73, 47, 23))
+    Cursed Object: index As 0
+    Cursed Object: cur As 0
+    Cursed Object: counter As 0
+    Range 256
+    While
+        Using: (x) -> counter < 64
+        While
+            Using: (x) -> length(twisters) > index
+            Cursed Object: t As item(twisters, (index))
+            Cursed Object: r Of (x) -> drop(x, t)
+            Apply
+                Using: (x) -> take(x, t)
+            Reverse
+            Apply
+                Using: (x) -> concat(x, r)
+            Apply
+                Using: (x) -> concat(drop(x, (t + index + (counter * length(twisters))) % 256), take(x, (t + index + (counter * length(twisters))) % 256))
+            Apply
+                Using: (x) -> x also (cur := (cur + t + index + (counter * length(twisters))) % 256) + (index := index + 1)
+        Apply
+            Using: (x) -> x also (counter := counter + 1) + (index := 0)
+    Apply
+        Using: (x) -> concat(drop(x, (256 - cur) % 256), take(x, (256 - cur) % 256))
+    Window 16 16
+    Map Each
+        Using: (x) ->if length(tobase(bxorall(x), 16)) = 1 then textjoin(list("0", tobase(bxorall(x), 16)), "") else tobase(bxorall(x), 16)
+    Join with ""
+    stdout
+Part "1":
+    Split ","
+    Convert To Integers
+    Cursed Object: twists Of (x) -> x
+    Cursed Object: i As 0
+    Cursed Object: cursor As 0
+    Range 256
+    While
+        Using: (x) -> length(twists) > i
+        Cursed Object: twist As item(twists, i)
+        Cursed Object: rest Of (x) -> drop(x, twist)
+        Apply
+            Using: (x) -> take(x, twist)
+        Reverse
+        Apply
+            Using: (x) -> concat(x, rest)
+        Apply
+            Using: (x) -> concat(drop(x, (twist + i) % 256), take(x, (twist + i) % 256))
+        Apply
+            Using: (x) -> x also (cursor := (cursor + twist + i) % 256) + (i := i + 1)
+    Apply
+        Using: (x) -> concat(drop(x, (256 - cursor) % 256), take(x, (256 - cursor) % 256))
 
+    Apply
+        Using: (x) -> item(x, 0) * item(x, 1)
+    stdout
