@@ -1,4 +1,8 @@
-i*
-o*
-a*
+# Puzzle data: never publish (AoC asks for no redistribution of inputs/puzzle text)
+# Patterns are narrow so solution folders like ago/ are not swallowed.
+i
+i[0-9]*
+o[0-9]*
+a[0-9]*
+aoc-*
 d*.md

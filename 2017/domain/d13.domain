@@ -1,0 +1,10 @@
+i13 
+Lines 
+Match Pattern 
+    Using: "{layer:int}: {depth:int}" 
+
+Part "1": 
+    Map Each 
+        Using: (x) -> if x.layer % x.depth = 0 then x.layer * x.depth else 0 
+    Sum 
+    stdout
