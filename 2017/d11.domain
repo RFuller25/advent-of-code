@@ -1,14 +1,25 @@
 i11
+
 Split ","
-Count By
-    Using: (c) -> c
-Apply
-    Consider se Of (x) -> getor(x, "se", 0)
-    Consider sw Of (x) -> getor(x, "sw", 0)
-    Consider w Of (x) -> getor(x, "w", 0)
-    Consider e Of (x) -> getor(x, "e", 0)
-    Consider ne Of (x) -> getor(x, "ne", 0)
-    Consider nw Of (x) -> getor(x, "nw", 0)
-    Using: (x) -> if se > 0 and sw > 0 then max(list(se, sw)) - min(list(se, sw))
+
+Shikigami "FindDistance"
+    Count By
+        Using: (x) -> x
+    Apply
+        Using: (xs) -> consider x as getor(xs, "ne", 0) + getor(xs, "se", 0) - getor(xs, "sw", 0) - getor(xs, "nw", 0) in
+            consider y as getor(xs, "n", 0) + getor(xs, "nw", 0) - getor(xs, "s", 0) - getor(xs, "se", 0) in
+            consider z as getor(xs, "s", 0) + getor(xs, "sw", 0) - getor(xs, "n", 0) - getor(xs, "ne", 0) in
+            (abs(x) + abs(y) + abs(z)) / 2
+
 Part "1":
+    FindDistance
+    stdout
+
+Part "2":
+    Cursed Object: distances of (x) -> emptylist("")
+    Map Each
+        Apply
+            Using: (x) -> distances := concat(distances, list(x))
+        FindDistance
+    Max
     stdout

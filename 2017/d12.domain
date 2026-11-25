@@ -1,6 +1,18 @@
 i12
 Lines
 Match Pattern
-    Mode: Each
-    Using: "{node:word} <-> {conns:int+ sep=\", \"}"
-# implemenmt graph objects....
+    Using: "{target:int} <-> {connections:int+ sep=\", \"}"
+Map Each
+    Using: (x) -> tuple(x.target, x.connections)
+Convert To Map
+Convert To Graph
+Strongly Connected Components
+
+Part "1":
+    Find
+        Using: (x) -> contains(x, 0)
+    Count
+    stdout
+Part "2":
+    Count
+    stdout
