@@ -2,9 +2,26 @@ i13
 Lines 
 Match Pattern 
     Using: "{layer:int}: {depth:int}" 
+Cursed Object: clear_sequence as 1
 
 Part "1": 
     Map Each 
-        Using: (x) -> if x.layer % x.depth = 0 then x.layer * x.depth else 0 
+        Using: (x) -> if (x.layer) % (2 * (x.depth - 1)) = 0 then x.layer * x.depth else 0 
     Sum 
+    Apply
+        Using: (x) -> clear_sequence := x
+    stdout
+Part "2":
+    Cursed Object: i as 1
+
+    While
+        Using: (x) -> clear_sequence > 0
+        Cursed Object: sequence of (x) -> x
+        Map Each 
+            Using: (x) -> if (x.layer + i) % (2 * (x.depth - 1)) = 0 then (x.layer * x.depth) + 1 else 0 
+        Sum
+        Apply
+            Using: (x) -> sequence also (clear_sequence := x) + (i := i + 1)
+    Apply
+        Using: (x) -> i - 1
     stdout
