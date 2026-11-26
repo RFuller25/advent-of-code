@@ -1,0 +1,60 @@
+i14
+Cursed Object: token of (x) -> x
+Shikigami "Perform Knot Hash"
+    Split ""
+    Map Each
+        Using: (x) -> ord(x)
+    Cursed Object: twisters of (x) -> concat(x, list(17, 31, 73, 47, 23))
+    Cursed Object: index As 0
+    Cursed Object: cur As 0
+    Cursed Object: counter As 0
+    Range 256
+    While
+        Using: (x) -> counter < 64
+        While
+            Using: (x) -> length(twisters) > index
+            Cursed Object: t As item(twisters, (index))
+            Cursed Object: r Of (x) -> drop(x, t)
+            Apply
+                Using: (x) -> take(x, t)
+            Reverse
+            Apply
+                Using: (x) -> concat(x, r)
+            Apply
+                Using: (x) -> concat(drop(x, (t + index + (counter * length(twisters))) % 256), take(x, (t + index + (counter * length(twisters))) % 256))
+            Apply
+                Using: (x) -> x also (cur := (cur + t + index + (counter * length(twisters))) % 256) + (index := index + 1)
+        Apply
+            Using: (x) -> x also (counter := counter + 1) + (index := 0)
+    Apply
+        Using: (x) -> concat(drop(x, (256 - cur) % 256), take(x, (256 - cur) % 256))
+    Window 16 16
+    Map Each
+        Using: (x) -> padleft(tobase(bxorall(x), 2), 8, "0")
+    Join with ""
+
+Range 128
+Part "1":
+    Map Each
+        Apply
+            Using: (x) -> textjoin(list(token, "-", totext(x)), "")
+        Perform Knot Hash
+        Split ""
+        Count Matching
+            Using: (x) -> x = "1"
+    Sum
+    stdout
+
+Part "2":
+    Map Each
+        Apply
+            Using: (x) -> textjoin(list(token, "-", totext(x)), "")
+        Perform Knot Hash
+        Split ""
+        Map Each
+            Using: (x) -> if x = "1" then "#" else "."
+        Join with ""
+    Convert To Grid
+    Domain Expansion: Connected Components
+        Using: (c) -> c = "#"
+    stdout
