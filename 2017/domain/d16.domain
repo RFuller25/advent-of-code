@@ -1,0 +1,36 @@
+Shikigami "Dance"
+    Simple Domain: For Each move In
+        Using: (x) -> dancemoves
+        Apply
+            Consider swap As (xs, a, b) -> set(set(xs, a, item(xs, b)), b, item(xs, a))
+            Using: (x, move, i) ->
+                consider arg as slice(move, 1, length(move))
+                in if startswith(move, "s") then
+                    consider k as length(x) - toint(arg)
+                    in concat(drop(x, k), take(x, k))
+                else if startswith(move, "x") then
+                    consider ab as split(arg, "/")
+                    in swap(x, toint(item(ab, 0)), toint(item(ab, 1)))
+                else
+                    consider ab as split(arg, "/")
+                    in swap(x, indexof(x, item(ab, 0)), indexof(x, item(ab, 1)))
+
+i16
+Split ","
+Cursed Object: dancemoves Of Itself
+Apply
+    Using: (x) -> "abcdefghijklmnop"
+Split ""
+Part "1":
+    Dance
+    Join
+    stdout
+Part "2":
+    Cursed Object: cycle of Find Cycle
+        Key: (x) -> textjoin(x, "")
+        Dance
+    Simple Domain: Repeat
+        Times: (x) -> 1000000000 % item(cycle, 1)
+        Dance
+    Join
+    stdout

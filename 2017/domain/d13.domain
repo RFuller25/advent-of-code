@@ -16,7 +16,7 @@ Part "2":
 
     While
         Using: (x) -> clear_sequence > 0
-        Cursed Object: sequence of (x) -> x
+        Cursed Object: sequence of Itself
         Map Each 
             Using: (x) -> if (x.layer + i) % (2 * (x.depth - 1)) = 0 then (x.layer * x.depth) + 1 else 0 
         Sum
