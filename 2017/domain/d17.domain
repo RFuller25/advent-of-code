@@ -1,0 +1,28 @@
+i17
+Cursed Object: skiplength of (x) -> toint(x)
+Part "1":
+    Apply
+        Using: (x) -> list(0)
+    Cursed Object: i as 1
+    Cursed Object: cursor as 1
+    While
+        Using: (x) -> i < 2018
+        Apply
+            Using: (x) ->
+                concat(take(x, cursor),
+                concat(list(i), drop(x, cursor)))
+                also (cursor := ((cursor + skiplength) % (i + 1)) + 1), (i := i + 1)
+    Cursed Object: found_index of (x) -> if (indexof(x, 2017) + 1) = i then 0 else indexof(x, 2017) + 1
+    Apply
+        Using: (x) -> item(x, found_index)
+    stdout
+Part "2":
+    Apply
+        Using: (x) -> 0
+    Cursed Tool: i as 1
+    Cursed Tool: cursor as 1
+    Repeat 50000000
+        Apply
+            Using: (x) -> if cursor = 1 then i else x also (cursor := ((cursor + skiplength) % (i + 1)) + 1), 
+                          (i := i + 1)
+    stdout
